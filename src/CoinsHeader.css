@@ -1,0 +1,10 @@
+.coins-header {
+    background-color: #282c34;
+    color: white;
+    font-weight: bold;
+}
+
+.header-item {
+    padding: 10px;
+    text-align: center; /* Center align text */
+} 

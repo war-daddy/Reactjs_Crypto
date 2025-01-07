@@ -34,7 +34,7 @@ margin-right: 10px;
 .coin-data{
     display: flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
 }
 .coin-price{

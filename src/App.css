@@ -18,3 +18,46 @@ input:hover{
 h1:hover{
   color:rgb(170, 176, 238);
 }
+.coins-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.header-item {
+  flex: 1; /* Equal space for each item */
+  text-align: center; /* Center align text */
+}
+.coin-box{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.pagination {
+    display: flex;
+    justify-content: center; /* Center the pagination buttons */
+    margin-top: 20px; /* Space above pagination */
+}
+
+.pagination button {
+    margin: 0 5px; /* Space between buttons */
+    padding: 10px 15px; /* Padding for buttons */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.pagination button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.pagination button.active {
+    background-color: #0056b3; /* Active button color */
+    font-weight: bold; /* Bold text for active button */
+}

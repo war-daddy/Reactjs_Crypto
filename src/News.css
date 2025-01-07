@@ -1,0 +1,28 @@
+.news-container {
+    margin: 20px;
+}
+
+.news-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.news-item {
+    margin-bottom: 20px; /* Space between news items */
+    padding: 10px;
+    border: 1px solid #ddd; /* Add border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+}
+
+.news-item h2 {
+    margin: 0; /* Remove default margin */
+}
+
+.news-item a {
+    color: blue; /* Link color */
+    text-decoration: underline; /* Underline links */
+} 
+a{
+    cursor: pointer;
+}

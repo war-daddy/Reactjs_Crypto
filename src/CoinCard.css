@@ -1,0 +1,62 @@
+.coin-card {
+    border: 1px solid #ddd; /* Add border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    margin: 10px; /* Space between cards */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth hover effect */
+    width: 50%;
+    text-align: left;
+}
+
+.coin-card:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.coin-header {
+    display: flex;
+    justify-content: space-between; /* Space between title and rank */
+    align-items: center; /* Center align items */
+}
+
+.coin-body {
+    margin: 15px 0; /* Space between header and body */
+    width: 50%;
+}
+.coin-conbox{
+    display: flex;
+}
+
+.coin-footer {
+    
+    padding-top: 15px; /* Padding for footer */
+    text-align: left;
+    width: 50%;
+}
+
+.price, .market-cap, .volume {
+    font-weight: bold; /* Bold for price and market cap */
+}
+
+.positive {
+    color: green; /* Positive change color */
+}
+
+.negative {
+    color: red; /* Negative change color */
+}
+
+.dotted-line {
+    border-top: 1px dotted #ddd; /* Dotted line style */
+    margin: 10px 0; /* Space around the line */
+}
+
+.coin-card h2 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5em; /* Increase font size */
+}
+
+.coin-card p {
+    margin: 5px 0; /* Margin for paragraphs */
+} 
