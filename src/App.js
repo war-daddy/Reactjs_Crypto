@@ -1,45 +1,68 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Coins from "./Coins";
+import './Coins.css';
 import './App.css'
+import CoinCard from "./CoinCard";
+
 export default function App() {
   const [coins, setCoins] = useState([]);
-  const [search,setSearch] = useState('');
+  const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10; 
+
   useEffect(() => {
     axios
-      .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-      )
+      .get("https://api.coinlore.net/api/tickers/")
       .then((res) => {
-        setCoins(res.data);
-      }).catch(error => console.log(error))
-  },[]);
-    const filteredCoins = coins.filter(coin => 
-      coin.name.toLowerCase().includes(search.toLocaleLowerCase())
-      )
-     const InputHandler = (e) =>{
-       setSearch(e.target.value);
-     } 
+        console.log(res);
+        setCoins(res.data.data);
+      })
+      .catch(error => console.log(error));
+  }, []);
+
+  const filteredCoins = coins.filter(coin => 
+    coin.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const InputHandler = (e) => {
+    setSearch(e.target.value);
+    setCurrentPage(1);
+  };
+
+  
+  const indexOfLastItem = currentPage * itemsPerPage;
+ 
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  
+  const currentCoins = filteredCoins.slice(indexOfFirstItem, indexOfLastItem);
+
+ 
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+ 
+  const totalPages = Math.ceil(filteredCoins.length / itemsPerPage);
+
   return (
     <div className="App">
       <div>
-      <h1>Search a currency</h1>
-      <from>
-        <input type="text" placeholder = "search" onChange={InputHandler}></input>
-      </from>
+        {/* <h1>Search a currency</h1> */}
+        <form style={{marginTop:"30px"}}>
+          <input type="text" placeholder="search" onChange={InputHandler}></input>
+        </form>
       </div>
-      {filteredCoins.map(coin => {
-      return(
-      <Coins key = {coin.id} 
-      name = {coin.name} 
-      image = {coin.image}
-      symbol = {coin.symbol}
-      volume = {coin.market_cap}
-      price = {coin.current_price}
-      rank = {coin.market_cap_rank}
-      per = {coin.price_change_percentage_24h}
-       />
-      )})}
+      <div className="coin-box">
+        {currentCoins.map(coin => (
+          <CoinCard key={coin.id} coin={coin} /> // Pass coin data to CoinCard
+        ))}
+      </div>
+      <div className="pagination">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button key={index + 1} onClick={() => paginate(index + 1)} className={currentPage === index + 1 ? 'active' : ''}>
+            {index + 1}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

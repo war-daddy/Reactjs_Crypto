@@ -1,0 +1,36 @@
+.nft-container {
+    margin: 20px;
+}
+
+.nft-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: space-between; /* Space between cards */
+}
+
+.nft-card {
+    border: 1px solid #ddd; /* Add border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    margin: 10px; /* Space between cards */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: calc(30% - 20px); /* Responsive width */
+    text-align: center; /* Center text */
+}
+
+.nft-image {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for image */
+}
+
+.nft-card h2 {
+    margin: 10px 0; /* Margin for heading */
+    font-size: 1.5em; /* Increase font size */
+}
+
+.nft-card p {
+    margin: 5px 0; /* Margin for paragraphs */
+    text-align: left;
+} 

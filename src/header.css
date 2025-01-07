@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid purple;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-box-shadow: 1px -1px 34px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px -1px 34px -12px rgba(0,0,0,0.75);
+    box-shadow: 1px -1px 34px -12px rgba(0,0,0,0.75);
+}
+
+.header-left h1 {
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+        gap: 45px;
+        justify-content: center;
+        align-items: center;
+    margin-right: 50px;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    position: relative; /* For circle effect */
+}
+
+.active{
+    background-color: blueviolet;
+    border-radius:10px ;
+    padding: 4px 8px;
+    color: #ffffff;
+}
+.name-head{
+    font-weight: bold;
+
+}
