@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Coins from "./Coins";
 import './Coins.css';
 import './App.css'
 import CoinCard from "./CoinCard";
